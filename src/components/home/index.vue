@@ -1,7 +1,6 @@
 <template>
     <div>
         <h1>hello xiaoc</h1>
-        <el-image :src="logo"></el-image>
     </div>
 </template>
 
