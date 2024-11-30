@@ -1,23 +1,26 @@
 <template>
-    <div>
-        <router-link to="/"></router-link>
-        <router-view/>
-    </div>
+  <div id="app">
+    <Login />
+  </div>
 </template>
 
 <script>
+import Login from './components/home/template.vue';
 
 export default {
-    name: 'App',
-}
+  components: {
+    Login,
+  },
+};
 </script>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-}
-html {
-    background-color: #EAEDF1;
+#app {
+  font-family: Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
 }
 </style>
