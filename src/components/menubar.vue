@@ -1,0 +1,54 @@
+<template>
+    <div class="common-layout">
+        <el-container>
+            <el-header
+                style="display: flex; padding-left: 2.3%; align-items: center; background: #2E59A7; justify-content: space-between">
+                <el-popconfirm title="打开可视化大屏" @confirm="window_href" style="padding-left: 30%">
+                    <template #reference>
+                        <h1 style="color: #fff">基于大数据决策系统的无纸化请假系统</h1>
+                    </template>
+                </el-popconfirm>
+                <el-popconfirm title="退出登录" @confirm="logout">
+                    <template #reference>
+                        <el-image :src="logo" style="height: 70%; border-radius: 50%"></el-image>
+                    </template>
+                </el-popconfirm>
+            </el-header>
+            <el-main >
+                <router-link to="/home"></router-link>
+                <router-view/>
+            </el-main>
+        </el-container>
+    </div>
+</template>
+
+<script>
+
+import logo from "@/assets/img.png"
+
+export default {
+    name: "MenuBar",
+    data() {
+        return {
+            ip: "",
+            info: {},
+            logo: logo
+        };
+    },
+    methods: {
+        getData() {
+            // console.log(this.info.avatar);
+        },
+    },
+    created() {
+        this.ip = this.$BaseIp;
+        this.info = JSON.parse(localStorage.getItem("info"))
+        this.getData()
+    },
+};
+</script>
+
+<style>
+</style>
+
+

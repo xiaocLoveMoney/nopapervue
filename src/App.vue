@@ -1,6 +1,6 @@
 <template>
     <div>
-        <router-link to="/"></router-link>
+<!--        <router-link to="/"></router-link>-->
         <router-view></router-view>
     </div>
 </template>
@@ -17,6 +17,7 @@ export default {
     margin: 0;
     padding: 0;
 }
+
 html {
     background-color: #EAEDF1;
 }

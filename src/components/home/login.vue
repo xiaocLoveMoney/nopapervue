@@ -39,7 +39,7 @@
 import router from "@/router";
 import mp4 from "@/assets/login.mp4"
 import img from "@/assets/img.png"
-import {login} from "@/API/auth";
+import {info, login} from "@/API/auth";
 import {ElMessage} from "element-plus";
 
 export default {
@@ -65,19 +65,24 @@ export default {
                 console.log(res)
                 if (res.code === 200) {
                     localStorage.setItem("token", res.token)
-                    ElMessage({
-                        message: '登录成功',
-                        type: 'success',
-                    })
-                    setTimeout(function () {
-                        router.push("/home");
-                    }, 1500)
-                } else {
-                    ElMessage({
-                        message: '用户名或密码错误',
-                        type: 'error'
+                    info().then(res => {
+                        console.log(res)
+                        localStorage.setItem("info", JSON.stringify(res.data))
+                        ElMessage({
+                            message: '登录成功',
+                            type: 'success',
+                        })
+                        setTimeout(function () {
+                            router.push("/home");
+                        }, 1500)
                     })
                 }
+            }).catch(err => {
+                console.log(err)
+                ElMessage({
+                    message: '用户名或密码错误',
+                    type: 'error'
+                })
             })
         }
     },
