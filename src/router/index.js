@@ -1,10 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 // 导入各个页面组件
-import Home from '../components/home/template.vue';
+import Login from '../components/home/login.vue';
+import Home from '../components/home/index.vue';
 
-const routes = [{
+const routes = [
+    {
         path: '/',
+        component: Login
+    },{
+        path: '/home',
         component: Home
     },
 ];
