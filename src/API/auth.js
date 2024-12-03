@@ -11,8 +11,8 @@ export const info = () => {
 }
 
 // 获取考勤记录
-export const attendancelist = () => {
-    return api.get('/api/attendance/attendancelist');
+export const attendancelist = (pages) => {
+    return api.get('/api/attendance/attendancelist?page=' + pages);
 }
 
 export const get_chart1 = () => {
@@ -36,7 +36,7 @@ export const student_createLeaves = (data) => {
 }
 
 export const upload_attendance = (data) => {
-    return api.post('/api/attendance/classattendance', data);
+    return api.post('/api/attendance/addattendance', data);
 }
 
 export const getleaveserror = () => {
@@ -46,3 +46,12 @@ export const getleaveserror = () => {
 export const teacheract = (data) => {
     return api.post('/api/attendance/teacheract', data);
 }
+
+export const leavelist = (data) => {
+    return api.get('/api/leaves/leaveslist?page=' + data);
+}
+
+export const leaveslistfromdate = (date) => {
+    return api.get('/api/leaves/leaveslistfromdate?date=' + date);
+}
+
