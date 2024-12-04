@@ -443,7 +443,7 @@ export default {
                         attendance_id: item.attendance_id,
                         date: item.date,
                         name: item.stu_name,
-                        reason: item.reason == "null" || item.reason == null ? "暂无原因" : item.reason,
+                        reason: item.reason == "null" || item.reason == null || item.reason == "" ? "暂无原因" : item.reason,
                         tag: item.status
                     })
                 })
@@ -460,7 +460,7 @@ export default {
                         leave_id: item.leave_id,
                         date: item.date,
                         name: item.username,
-                        reason: item.reason == "null" || item.reason == null ? "暂无原因" : item.reason,
+                        reason: item.reason == "null" || item.reason == null || item.reason == "" ? "暂无原因" : item.reason,
                         tag: item.status
                     })
                 })
