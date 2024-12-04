@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Login from '../components/home/login.vue';
 import Home from '../components/home/index.vue';
 import MenuBar from '../components/menubar.vue';
+import Table from '../components/home/table.vue';
 
 const routes = [
     {
@@ -16,6 +17,9 @@ const routes = [
             path: '/home',
             component: Home
         },]
+    },{
+        path: '/table',
+        component: Table,
     },
 ];
 
