@@ -10,6 +10,8 @@ import Attendance from '../components/attendance/index.vue';
 import SetPassWd from '../components/my/setpasswd.vue';
 import Settings from '../components/my/settings.vue';
 import CreateLeave from '../components/home/createLeave.vue';
+import UploadAttendance from '../components/home/uploadAttendance.vue';
+import CheckLeaves from '../components/home/checkLeaves.vue';
 
 const routes = [
     {
@@ -40,6 +42,12 @@ const routes = [
     },{
         path: '/createleave',
         component: CreateLeave,
+    },{
+        path: '/upload_attendance',
+        component: UploadAttendance,
+    },{
+        path: '/checkLeaves',
+        component: CheckLeaves,
     },
 ];
 

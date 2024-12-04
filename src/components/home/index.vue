@@ -47,13 +47,13 @@
                 </el-col>
                 <el-col :span="8" style="width: 100%; padding: 0 3px">
                     <el-button type="success" style="width: 100%; height: 100%" round
-                               :disabled="info.role_names.includes('学生')">
+                               :disabled="info.role_names.includes('学生')" @click="attend_visible()">
                         提交考勤
                     </el-button>
                 </el-col>
                 <el-col :span="8" style="width: 100%; padding: 0 3px">
                     <el-button type="warning" style="width: 100%; height: 100%" round
-                               :disabled="info.role_names.includes('学生')">
+                               :disabled="info.role_names.includes('学生')" @click="goto('/checkleaves')">
                         审核请假
                     </el-button>
                 </el-col>
@@ -100,7 +100,8 @@
 <script>
 
 import router from "@/router";
-import {announcementlist, leavelist, slider} from "@/API/auth";
+import {announcementlist, leavelist, leaveslistfromdate, slider} from "@/API/auth";
+import {ElNotification} from "element-plus";
 
 export default {
     name: router,
@@ -158,10 +159,42 @@ export default {
         },
         goto(path) {
             router.push(path)
-        }
+        },
+        attend_visible() {
+            var current_date = this.get_local_date()
+            leaveslistfromdate(current_date).then(res => {
+                console.log(res)
+                if (res.data.filter(item => item.status == '未审核').length == 0) {
+                    router.push("/upload_attendance")
+                } else {
+                    ElNotification({
+                        title: '警告',
+                        message: "请先审核请假申请",
+                        position: 'bottom-right',
+                        type: "warning",
+                        offset: 50
+                    })
+                }
+            }).catch(error => {
+                console.log(error);
+                ElNotification({
+                    title: '错误',
+                    message: "内部错误，请联系管理员",
+                    position: 'bottom-right',
+                    type: "error",
+                    offset: 50
+                })
+            })
+        },
+        get_local_date() {
+            const date = new Date();
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0'); // 月份从0开始，需要+1
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        },
     },
     created() {
-
         this.ip = this.$BaseIp;
         this.info = JSON.parse(localStorage.getItem("info"));
         this.getData()
@@ -177,7 +210,7 @@ export default {
 header {
     position: fixed;
     top: 0;
-    z-index: 1000000;
+    z-index: 1000;
 }
 .back-color {
     background: linear-gradient(#9198e5, #64d3e6, #EAEDF1);

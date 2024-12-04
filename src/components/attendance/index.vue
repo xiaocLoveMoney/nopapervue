@@ -18,7 +18,8 @@
                     <h3>当天签到情况</h3>
                 </div>
             </template>
-            <div style="width: 100%; height: 300px;" id="chart1"></div>
+            <div style="width: 100%; height: 300px;" id="chart1" v-show="yibiao"></div>
+            <el-empty v-show="!yibiao" description="班主任添加当天考勤即可查看"/>
         </el-card>
         <el-card style="margin: 15px; border-radius: 15px">
             <template #header>
@@ -72,6 +73,7 @@ export default {
             ip: "",
             attendancelist_page: 1,
             attendance_tableData: [],
+            yibiao: true,
         };
     },
     methods: {
