@@ -6,11 +6,20 @@ import router from './router';
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 import echarts from 'echarts';
+// main.ts
 
-const app = createApp(App);
+// 如果您正在使用CDN引入，请删除下面一行。
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+
+const app = createApp(App)
+
+// 注册所有图标
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    app.component(key, component)
+}
 
 // 设置全局变量
-app.config.globalProperties.$BaseIp = "http://118.89.171.26:5500";
+app.config.globalProperties.$BaseIp = "http://118.89.171.26:5050";
 app.config.globalProperties.$UserInfo = null;
 
 // 全局注册 Element Plus

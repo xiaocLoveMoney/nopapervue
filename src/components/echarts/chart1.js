@@ -28,46 +28,46 @@ export var get_chart1_options = function (res) {
                 value: res.data[0].sum || 0,
                 name: res.data[0].status || '事假未批准',
                 title: {
-                    offsetCenter: ['-150%', '60%']
+                    offsetCenter: ['0%', '80%']
                 },
                 detail: {
-                    offsetCenter: ['-150%', '80%']
+                    offsetCenter: ['0%', '100%']
                 }
             }, {
                 value: res.data[1].sum || 0,
                 name: res.data[1].status || '病假未批准',
                 title: {
-                    offsetCenter: ['-150%', '20%']
+                    offsetCenter: ['80%', '80%']
                 },
                 detail: {
-                    offsetCenter: ['-150%', '40%']
+                    offsetCenter: ['80%', '100%']
                 }
             }, {
                 value: res.data[2].sum || 0,
                 name: res.data[2].status || '事假已批准',
                 title: {
-                    offsetCenter: ['-150%', '-20%']
+                    offsetCenter: ['-80%', '80%']
                 },
                 detail: {
-                    offsetCenter: ['-150%', '0%']
+                    offsetCenter: ['-80%', '100%']
                 }
             }, {
                 value: res.data[3].sum || 0,
                 name: res.data[3].status || '病假已批准',
                 title: {
-                    offsetCenter: ['-150%', '-60%']
+                    offsetCenter: ['80%', '-100%']
                 },
                 detail: {
-                    offsetCenter: ['-150%', '-40%']
+                    offsetCenter: ['80%', '-120%']
                 }
             }, {
                 value: res.data[4].sum || 0,
                 name: res.data[4].status || '正常到校',
                 title: {
-                    offsetCenter: ['-150%', '-100%']
+                    offsetCenter: ['-80%', '-100%']
                 },
                 detail: {
-                    offsetCenter: ['-150%', '-80%']
+                    offsetCenter: ['-80%', '-120%']
                 }
             }],
             detail: {

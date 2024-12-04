@@ -2,14 +2,14 @@ export var get_chart2_options = function (res) {
     var option = {
         legend: {},
         toolbox: {
-            feature: {
-                dataZoom: {
-                    yAxisIndex: false
-                },
-                saveAsImage: {
-                    pixelRatio: 2
-                }
-            }
+            // feature: {
+            //     dataZoom: {
+            //         yAxisIndex: false
+            //     },
+            //     saveAsImage: {
+            //         pixelRatio: 2
+            //     }
+            // }
         },
         tooltip: {
         },

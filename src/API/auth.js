@@ -78,3 +78,11 @@ export const leaveserrorfromclassordepartment = () => {
 export const checkleaves = (data) => {
     return api.put('/api/leaves/checkleaves', data);
 }
+
+export const slider = () => {
+  return api.get('/api/other/swiperlist');
+}
+
+export const announcementlist = () => {
+    return api.get('/api/announcement/announcementlist');
+}
