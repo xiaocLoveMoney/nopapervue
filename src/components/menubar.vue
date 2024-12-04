@@ -25,6 +25,9 @@
 <script>
 
 import logo from "@/assets/img.png"
+import {logout_token} from "@/API/auth";
+import {ElMessage} from "element-plus";
+import router from "@/router";
 
 export default {
     name: "MenuBar",
@@ -39,6 +42,18 @@ export default {
         getData() {
             // console.log(this.info.avatar);
         },
+        logout() {
+            logout_token().then(res => {
+                console.log(res);
+                router.back();
+            }).catch(err => {
+                console.log(err);
+                ElMessage({
+                    type: "error",
+                    message: "错误, 请重试"
+                })
+            })
+        }
     },
     created() {
         this.ip = this.$BaseIp;

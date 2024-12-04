@@ -32,7 +32,7 @@ export const get_todayAttendance = () => {
 }
 
 export const student_createLeaves = (data) => {
-    return api.post('/api/attendance/studentcreateleavve', data)
+    return api.post('/api/leaves/studentcreateleaves', data)
 }
 
 export const upload_attendance = (data) => {
@@ -55,3 +55,26 @@ export const leaveslistfromdate = (date) => {
     return api.get('/api/leaves/leaveslistfromdate?date=' + date);
 }
 
+export const leavestextmaker = (data) => {
+    return api.get(`/api/textmaker/makerLeavesContentFromResion?resion=${data.reason}&type=${data.type}`);
+}
+
+export const get_announcementlist = () => {
+  return api.get('/api/announcement/announcementlist')
+}
+
+export const logout_token = () => {
+    return api.get('/api/auth/logout')
+}
+
+export const leaveserrorfromuserid = (user_id) => {
+  return api.get('/api/analysis/leaveserrorfromuserid?user_id=' + user_id);
+}
+
+export const leaveserrorfromclassordepartment = () => {
+    return api.get('/api/analysis/leaveserrorfromclassordepartment');
+}
+
+export const checkleaves = (data) => {
+    return api.put('/api/leaves/checkleaves', data);
+}
