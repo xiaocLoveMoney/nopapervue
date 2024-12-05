@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: "http://118.89.171.26:5500", // 基础 URL，根据实际情况修改
+    baseURL: "http://118.89.171.26:5050", // 基础 URL，根据实际情况修改
     timeout: 20000,  // 请求超时
 });
 

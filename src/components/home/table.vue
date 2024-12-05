@@ -53,7 +53,7 @@
                         <div class="title-box">
                             <h6>正常到校最多的班级</h6>
                         </div>
-                        <div class="chart-box" id="chart2" style="width: 100%; height: 280px">
+                        <div class="chart-box" id="chart1" style="width: 100%; height: 280px">
                             图表
                         </div>
                     </article>
@@ -62,7 +62,7 @@
                         <div class="title-box">
                             <h6>正常到校最少的班级</h6>
                         </div>
-                        <div class="chart-box" id="chart1" style="width: 100%; height: 280px">
+                        <div class="chart-box" id="chart2" style="width: 100%; height: 280px">
                         </div>
                     </article>
                 </div>
@@ -85,7 +85,7 @@ export default {
     data() {
         return {
             ip: "",
-            date: "2024-11-01"
+            date: "2024-11-07"
         };
     },
     methods: {
@@ -140,9 +140,9 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 保证视频充满页面且不变形 */
     z-index: -1000;
     background-image: url("@/assets/bg3.jpg");
+    background-size: cover;
 }
 
 header {
