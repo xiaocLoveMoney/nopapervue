@@ -201,11 +201,13 @@
                             <el-descriptions-item label="请假原因">
                                 {{ item.reason }}
                             </el-descriptions-item>
-                            <el-descriptions-item label="大数据决策建议">
+                            <el-descriptions-item label="">
                                 <el-button type="primary" plain v-if="item.idea.length == 0" @click="add_checkleaves_textmaker_user(item)">获取大数据决策建议</el-button>
-                                <div v-else>
-                                    {{ item.idea }}
-                                </div>
+                                <el-alert  v-else
+                                    title="大数据决策建议："
+                                    type="success"
+                                    :description="item.idea"
+                                />
                             </el-descriptions-item>
                         </el-descriptions>
                         <el-radio-group v-model="item.status">
@@ -215,13 +217,17 @@
                         </el-radio-group>
                     </el-collapse-item>
                     <el-collapse-item title="全班/系部 大数据决策建议">
-                        <div>{{ add_checkleaves_allidea }}</div>
+                        <el-alert
+                                   title="大数据决策建议："
+                                   type="success"
+                                   :description="add_checkleaves_allidea"
+                        />
                     </el-collapse-item>
                 </el-collapse>
             </el-scrollbar>
             <template #footer>
                 <div class="dialog-footer">
-                    <el-button @click="add_attendance_visible = false">取消</el-button>
+                    <el-button @click="add_checkleaves_visible = false">取消</el-button>
                     <el-button type="primary" @click="add_checkleaves_event">
                         确定
                     </el-button>
