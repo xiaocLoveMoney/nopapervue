@@ -2,10 +2,10 @@
     <div class="common-layout">
         <el-container>
             <el-header
-                style="display: flex; padding-left: 2.3%; align-items: center; background: #2E59A7; justify-content: space-between">
+                style="display: flex; padding-left: 2.3%; align-items: center; background: #2E59A7; justify-content: space-between;">
                 <el-popconfirm title="打开可视化大屏" @confirm="window_href" style="padding-left: 30%">
                     <template #reference>
-                        <h1 style="color: #fff">基于大数据决策系统的无纸化请假系统</h1>
+                        <h1 style="color: #fff; padding: 0">基于大数据决策系统的无纸化请假系统</h1>
                     </template>
                 </el-popconfirm>
                 <el-popconfirm title="退出登录" @confirm="logout">
@@ -53,6 +53,9 @@ export default {
                     message: "错误, 请重试"
                 })
             })
+        },
+        window_href() {
+            window.location.href = "/table";
         }
     },
     created() {

@@ -10,7 +10,7 @@ import echarts from 'echarts';
 const app = createApp(App);
 
 // 设置全局变量
-app.config.globalProperties.$BaseIp = "http://118.89.171.26:5050";
+app.config.globalProperties.$BaseIp = "http://118.89.171.26:5500";
 app.config.globalProperties.$UserInfo = null;
 
 // 全局注册 Element Plus
