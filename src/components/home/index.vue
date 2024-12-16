@@ -2,6 +2,7 @@
     <div style="height: 100%">
         <el-row>
             <el-col :span="12" style="padding-right: .5%; height: 45vh">
+                <el-scrollbar>
                 <el-card style="height: 100%">
                     <template #header>
                         <div class="card-header">
@@ -61,6 +62,8 @@
                         </el-col>
                     </el-row>
                 </el-card>
+                    </el-scrollbar>
+
             </el-col>
             <el-col :span="12" style="padding-left: .5%; height: 45vh">
                 <el-card style="height: 100%">
