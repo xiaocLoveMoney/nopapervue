@@ -14,7 +14,7 @@
                                 <el-descriptions-item :rowspan="2" label="头像" align="center">
                                     <el-image style="height: 1%" :src="ip + info.avatar"/>
                                 </el-descriptions-item>
-                                <el-descriptions-item label="姓名">{{ info.username }}</el-descriptions-item>
+                                <el-descriptions-item label="姓名">{{ info.name }}</el-descriptions-item>
                                 <el-descriptions-item label="学籍号">{{ info.stu_id }}</el-descriptions-item>
                                 <el-descriptions-item label="系部">{{ info.department_name }}</el-descriptions-item>
                                 <el-descriptions-item label="班级">{{ info.class_name }}</el-descriptions-item>
@@ -465,6 +465,8 @@ export default {
                     })
                 })
                 this.leaves_tableData = this.leaves_tableData.sort((a, b) => new Date(b.date) - new Date(a.date))
+            }).catch(error => {
+                console.log(error);
             })
             this.leaveslist_page += 1;
         },
